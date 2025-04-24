@@ -78,8 +78,8 @@ life-expectancy-prediction/
 ---
 
 ## Report
-![Report Screenshot](Report\life_expectancy_analysis_report.PNG)
-A detailed project report is available in `Report\Life Expectancy Analysis.pbit`.
+![Report Screenshot](Report/life_expectancy_report.PNG)
+A detailed project report is available in `Report/life_expectancy_report.pbit`.
 
 ---
 
