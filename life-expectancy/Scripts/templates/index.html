@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Expectancy Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            background-color: #ffe6e6;
+            color: #c0392b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .prediction-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            color: #34495e;
+            font-size: 1em;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+            outline: none;
+        }
+
+        .form-group input:hover,
+        .form-group select:hover {
+            border-color: #3498db;
+        }
+
+        .submit-button {
+            grid-column: span 2;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .prediction-form {
+                grid-template-columns: 1fr;
+            }
+            .submit-button {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Life Expectancy Prediction</h1>
+        <p class="subtitle">Enter the details below to predict life expectancy.</p>
+
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+
+        <form action="/predict" method="POST" class="prediction-form">
+            <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                    <option value="Developed">Developed</option>
+                    <option value="Developing">Developing</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="adult_mortality">Adult Mortality</label>
+                <input type="number" id="adult_mortality" name="adult_mortality" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="infant_deaths">Infant Deaths</label>
+                <input type="number" id="infant_deaths" name="infant_deaths" required>
+            </div>
+            <div class="form-group">
+                <label for="alcohol">Alcohol</label>
+                <input type="number" id="alcohol" name="alcohol" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="percentage_expenditure">Percentage Expenditure</label>
+                <input type="number" id="percentage_expenditure" name="percentage_expenditure" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="hepatitis_b">Hepatitis B</label>
+                <input type="number" id="hepatitis_b" name="hepatitis_b" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="measles">Measles</label>
+                <input type="number" id="measles" name="measles" required>
+            </div>
+            <div class="form-group">
+                <label for="bmi">BMI</label>
+                <input type="number" id="bmi" name="bmi" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="under-five_deaths">Under-Five Deaths</label>
+                <input type="number" id="under-five_deaths" name="under-five_deaths" required>
+            </div>
+            <div class="form-group">
+                <label for="polio">Polio</label>
+                <input type="number" id="polio" name="polio" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="total_expenditure">Total Expenditure</label>
+                <input type="number" id="total_expenditure" name="total_expenditure" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="diphtheria">Diphtheria</label>
+                <input type="number" id="diphtheria" name="diphtheria" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="hiv/aids">HIV/AIDS</label>
+                <input type="number" id="hiv/aids" name="hiv/aids" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="gdp">GDP</label>
+                <input type="number" id="gdp" name="gdp" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="population">Population</label>
+                <input type="number" id="population" name="population" required>
+            </div>
+            <div class="form-group">
+                <label for="thinness_1-19_years">Thinness 1-19 Years</label>
+                <input type="number" id="thinness_1-19_years" name="thinness_1-19_years" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="thinness_5-9_years">Thinness 5-9 Years</label>
+                <input type="number" id="thinness_5-9_years" name="thinness_5-9_years" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="income_composition_of_resources">Income Composition of Resources</label>
+                <input type="number" id="income_composition_of_resources" name="income_composition_of_resources" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="schooling">Schooling</label>
+                <input type="number" id="schooling" name="schooling" step="0.1" required>
+            </div>
+            <button type="submit" class="submit-button">Predict Life Expectancy</button>
+        </form>
+    </div>
+</body>
+</html>
