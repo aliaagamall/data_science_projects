@@ -73,7 +73,7 @@ life-expectancy-prediction/
 ---
 
 ## Screenshot
-![Flask App Screenshot](Report\flask_app_screenshot.PNG)
+![Flask App Screenshot](Report/flask_app_screenshot.PNG)
 
 ---
 
