@@ -4,13 +4,6 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-def encode_ordinal(X, mapping, columns):
-    """Encode ordinal features using a mapping."""
-    X = X.copy()
-    for col in columns:
-        X[col] = X[col].map(mapping)
-    return X
-
 class MedicalEntrancePredictor:
     """A class to load the trained model and make predictions for medical entrance exam performance."""
     
@@ -22,7 +15,7 @@ class MedicalEntrancePredictor:
         except FileNotFoundError as e:
             raise FileNotFoundError(f"Model or preprocessor file not found: {e}")
         
-        # Define expected features (based on training data after dropping Gender, twelve_education, time)
+        # Define expected features 
         self.expected_features = [
             'Caste', 'coaching', 'medium', 'Father_occupation', 'Mother_occupation',
             'Class_ten_education', 'Class_X_Grade', 'Class_XII_Grade'
@@ -87,13 +80,6 @@ class MedicalEntrancePredictor:
             raise RuntimeError(f"Prediction failed: {str(e)}")
 
 if __name__ == "__main__":
-
-    def encode_ordinal(X, mapping, columns):
-        """Encode ordinal features using a mapping."""
-        X = X.copy()
-        for col in columns:
-            X[col] = X[col].map(mapping)
-        return X
 
     # Example usage
     predictor = MedicalEntrancePredictor()
