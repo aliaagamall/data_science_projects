@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Entrance Performance Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+        select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            background-color: #f7fafc;
+            transition: border-color 0.3s ease;
+        }
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        .submit-btn {
+            background-color: #667eea;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+        .submit-btn:hover {
+            background-color: #5a67d8;
+            transform: translateY(-2px);
+        }
+        .title {
+            color: #2d3748;
+            font-size: 1.875rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Predict Your Medical Entrance Performance</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="Caste">Student Caste</label>
+                <select name="Caste" required>
+                    <option value="" disabled selected>Select Student Caste</option>
+                    <option value="General">General</option>
+                    <option value="OBC">OBC</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="coaching">Coaching Type</label>
+                <select name="coaching" required>
+                    <option value="" disabled selected>Select Coaching Type</option>
+                    <option value="Within Assam">Within Assam</option>
+                    <option value="Outside Assam">Outside Assam</option>
+                    <option value="No Coaching">No Coaching</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="medium">Medium of Instruction</label>
+                <select name="medium" required>
+                    <option value="" disabled selected>Select Medium of Instruction</option>
+                    <option value="English">English</option>
+                    <option value="Assamese">Assamese</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Father_occupation">Father's Occupation</label>
+                <select name="Father_occupation" required>
+                    <option value="" disabled selected>Select Father's Occupation</option>
+                    <option value="Others">Others</option>
+                    <option value="School_teacher">School Teacher</option>
+                    <option value="Business">Business</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Engineer">Engineer</option>
+                    <option value="College_teacher">College Teacher</option>
+                    <option value="Cultivator">Cultivator</option>
+                    <option value="Bank_official">Bank Official</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Mother_occupation">Mother's Occupation</label>
+                <select name="Mother_occupation" required>
+                    <option value="" disabled selected>Select Mother's Occupation</option>
+                    <option value="House_wife">Housewife</option>
+                    <option value="School_teacher">School Teacher</option>
+                    <option value="College_teacher">College Teacher</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Class_ten_education">Class X Board</label>
+                <select name="Class_ten_education" required>
+                    <option value="" disabled selected>Select Class X Board</option>
+                    <option value="SEBA">SEBA</option>
+                    <option value="CBSE">CBSE</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Class_X_Grade">Class X Grade</label>
+                <select name="Class_X_Grade" required>
+                    <option value="" disabled selected>Select Class X Grade</option>
+                    <option value="Average">Average</option>
+                    <option value="Good">Good</option>
+                    <option value="Vg">Very Good</option>
+                    <option value="Excellent">Excellent</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Class_XII_Grade">Class XII Grade</label>
+                <select name="Class_XII_Grade" required>
+                    <option value="" disabled selected>Select Class XII Grade</option>
+                    <option value="Average">Average</option>
+                    <option value="Good">Good</option>
+                    <option value="Vg">Very Good</option>
+                    <option value="Excellent">Excellent</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="submit-btn">Predict Performance</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

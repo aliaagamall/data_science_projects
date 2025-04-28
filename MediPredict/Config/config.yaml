@@ -1,0 +1,5 @@
+paths:
+  raw_data: "Data/raw/student_performance.csv"
+  preprocessed_data: "Data/processed/preprocessed_data.csv"
+  best_model: "Models/best_model.pkl"
+  preprocessor: "Models/preprocessor.joblib"
