@@ -22,7 +22,6 @@ This repository serves as a collection of data science projects, focusing on are
    ```bash
    pip install -r requirements.txt
    ```
-   *(Note: You can create a `requirements.txt` file by running `pip freeze > requirements.txt` after setting up your environment.)*
 
 4. Launch Jupyter Notebook to explore the projects:
    ```bash
