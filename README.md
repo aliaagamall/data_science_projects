@@ -37,4 +37,4 @@ This repository serves as a collection of data science projects, focusing on are
 Contributions are welcome! Feel free to fork this repository, add your own projects, or suggest improvements via pull requests.
 
 ## Contact
-For questions or suggestions, feel free to open an issue on GitHub or reach out to me at [alliaagamall@example.com].
+For questions or suggestions, feel free to open an issue on GitHub or reach out to me at [alliaagamall@gmail.com].
