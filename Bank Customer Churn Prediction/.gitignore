@@ -1,0 +1,104 @@
+# General Python/Django
+__pycache__/
+*.py[cod]
+*$py.class
+*.pot
+*.pyc
+*.pyd
+.Python
+env/
+venv/
+env.bak/
+venv.bak/
+pythonenv*/
+.venv*/
+pip-selfcheck.json
+
+# Virtual environments
+*.egg-info/
+*.egg
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Secrets
+*.pem
+*.key
+*.crt
+*.cer
+secrets.json
+
+# Ignore OS generated files
+._*
+
+# Ignore test artifacts
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Ignore macOS Finder customization
+*.AppleDouble
+LSOverride
+
+# Ignore temporary files
+*~
+*.swp
+*.swo
